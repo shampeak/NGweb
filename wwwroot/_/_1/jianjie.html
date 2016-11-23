@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="高效优雅的PHP微型框架">
+    <meta name="author" content="Shampeak">
+    <title>GraceEasy 高效优雅的PHP微型框架</title>
+    <link href="/assets/bootstrap-3.3.5/css/bootstrap.min.css" type="text/css" rel="stylesheet"/>
+    <link href="/css/docs.min.css" rel="stylesheet">
+    <link href="/css/U.css" type="text/css" rel="stylesheet"/>
+</head>
+
+<body>
+
+<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">GraceEasy</a>
+        </div>
+        <div id="navbar" class="collapse navbar-collapse">
+            <ul class="nav navbar-nav">
+                <li><a href="/">首页</a></li>
+                <li class="active"><a href="jianjie.html">简介</a></li>
+                <li><a href="sc.html">手册</a></li>
+                <li><a href="kfwd.html">开发文档</a></li>
+                <li><a href="sl.html">示例</a></li>
+                <li><a href="jianjie.html#s3">源码与下载</a></li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <li><a target="_blank">PHP学习</a></li>
+                <li><a target="_blank">关于</a></li>
+            </ul>
+        </div><!--/.nav-collapse -->
+    </div>
+</nav>
+
+<span id="#top"></span>
+
+<div class="container" id="cbody">
+
+
+
+    <div class="row">
+        <div class="col-sm-3 blog-sidebar">
+            <div class="bs-docs-sidebar hidden-print hidden-xs hidden-sm  sidebar-module-inset" role="complementary" style="padding-top: 50px;">
+                <ul class="nav bs-sidenav">
+                    <li>
+                        <a href="#s1">GraceEasy简介</a>
+                    </li>
+                    <li>
+                        <a href="#tedian">特点</a>
+                    </li>
+                    <li>
+                        <a href="#s2">目录结构</a>
+                    </li>
+                    <li>
+                        <a href="#s3">下载和安装</a>
+                    </li>
+                    <li>
+                        <a href="#s5">Hello World</a>
+                    </li>
+                </ul>
+                <!--  -->
+                <a class="back-to-top" href="#top">
+                    返回顶部
+                </a>
+            </div>
+
+            <!-- div class="sidebar-module sidebar-module-inset">
+                <h4>About</h4>
+                <p>Etiam porta <em>sem malesuada magna</em> mollis euismod. Cras mattis consectetur purus sit amet fermentum. Aenean lacinia bibendum nulla sed consectetur.</p>
+            </div -->
+            <!-- div class="sidebar-module">
+                <h4>相关</h4>
+                <ol class="list-unstyled">
+                    <li><a href="#">GitHub</a></li>
+                    <li><a href="#">Twitter</a></li>
+                    <li><a href="#">Facebook</a></li>
+                </ol>
+            </div -->
+        </div><!-- /.blog-sidebar -->
+
+        <div class="col-sm-8 blog-main">
+
+            <div class="blog-header">
+                <ol class="breadcrumb">
+                    <li><a href="/">首页</a></li>
+                    <li class="active">简介</li>
+                </ol>
+
+                <h3 class="blog-title">GraceEasy</h3 class="blog-title">
+                <p class="lead blog-description">极简的敏捷框架.</p>
+            </div>
+
+            <div class="blog-post" id="s1">
+                <h2>简介</h2>
+                <hr>
+                <p>　　GracePHP是一个微型的PHP敏捷框架，适用于简单系统的快速开发，提供了简单的路由方式，采用原生PHP语法来渲染页面,简单且实用。
+                    目前GracePHP由Shampeak开发维护，如果你希望参与到此项目中来，可以到Github上Fork项目并提交Pull Request!
+                </p>
+                <hr>
+            </div><!-- /.blog-post -->
+
+            <div class="blog-post" id="tedian">
+                <h2>特点</h2>
+                <hr>
+                <p>
+
+<li>                    简单的API
+                <li>                    RFC3986 编码规范
+                <li> 遵循PSR-7日志接口
+                <li> 全文档支持文档
+                <li>组件框架无关[组件可以分离出来单独使用,有独立的文档和测试代码支持]；
+                <li> Composer支持
+                <li>遵循PSR-2和PSR-4规范
+                <li>单元测试
+                <li>轻量级框架
+
+                </p>
+
+
+                <h3>作者</h3>
+
+                GracePHP由shampeak研发小组独立研发 组员
+
+                Shampeak.
+                Lulu.
+
+                协议
+
+                本框架支持MIT开源协议,更多信息请参考License File.
+                <hr>
+            </div><!-- /.blog-post -->
+
+            <!-- 目录结构 -->
+            <div class="blog-post"  id="s2">
+                <h2>目录结构</h2>
+                <hr>
+<pre>
+GraceEasy
+    ├── App                                 #业务代码文件夹，可在配置中指定路径
+    │   ├── Cache                           #缓存文件夹
+    │   │   └── Log                         #日志文件夹，需要写权限
+    │   │   └── tmp                         #临时缓存文件
+    │   │   └── Slowquery                   #数据库慢查询日志
+    │   ├── Error                           #中断操作的模板文件夹
+    │   ├── Libary                          #外部库文件夹
+    │   ├── Model                           #模型文件夹
+    │   ├── Controller                      #控制器文件夹
+    │   │   └── Home                        #对应Home控制器文件夹
+    │   │        └── Home.php               #控制器
+    │   │        └── BaseController.php     #控制器的父类
+    │   └── View                            #模板文件夹
+    │        ├── Index                      #对应Index控制器
+    │        │   └── Index.php
+    │        └── Public                     #公用模板
+    │           ├── footer.php
+    │           └── header.php
+    ├── Grace                               #Grace 框架的核心文件
+    │   └── Config                          #配置文件夹
+    │   │   └── Config.php                  #全局配置文件
+    │   └── Router.php                      #核心文件 路由
+    │   └── Input.php                       #核心文件 数据获取
+    │   └── Helper.php                      #核心文件 封装函数
+    │   └── Grace.php                       #核心文件
+    │   └── Controller.php                  #核心文件 控制器
+    │   └── View.php                        #核心文件 视图
+    │   └── Bootstrap.php                   #核心文件 启动
+    └── wwwroot                             #发布目录
+    │   ├── assets                          #前端资源文件夹
+    │   └── Index.php                       #入口文件
+    └── vendor                              #Composer文件夹
+</pre>
+
+            </div><!-- /.blog-post -->
+
+            <div class="blog-post" id="s3">
+                <h2>下载和安装</h2>
+                <hr>
+                <h3>1 : 通过压缩包安装</h3>
+                <p>
+                    　　可以通过github直接下载压缩好的代码文件。
+                    当然也可以通过git直接clone项目,master分支为稳定版本，develop分支为开发版本，可能会有一些实验性的功能。
+                </p>
+                <p>
+                    <a class="btn btn-primary btn-lg" href="https://github.com/shampeak/GraceEasy">下载 稳定版</a>
+                </p>
+                <h3>2 : Composer安装</h3>
+                <p>
+                    　　可以通过github直接下载压缩好的代码文件。
+                    当然也可以通过git直接clone项目,master分支为稳定版本，develop分支为开发版本，可能会有一些实验性的功能。
+                </p>
+
+                <pre>composer require grace/graceeasy 1.0.x-dev</pre>
+
+            </div><!-- /.blog-post -->
+
+
+            <div class="blog-post" id="s5">
+                <h2>Hello World</h2>
+
+                <hr>
+                <h3>第一步 : </h3>
+                <p>
+                    请参考下载和安装!
+                </p>
+
+                <h3>第二步 : </h3>
+                <p>
+                    创建文件
+                </p>
+
+                <h3>第三步 : </h3>
+                <p>
+                    编写控制器
+                </p>
+<pre>
+namespace Ads\Bloodpress\Controller\Home;
+
+class Home extends BaseController {
+
+    //构造方法
+    public function __construct(){
+        parent::__construct();
+    }
+
+    //方法
+    public function doIndex(){
+    }
+}
+</pre>
+
+
+                <hr>
+
+            </div><!-- /.blog-post -->
+
+
+
+<hr>
+        </div><!-- /.blog-main -->
+
+
+    </div><!-- /.row -->
+
+</div><!-- /.container -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+<footer class="main-footer">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-4">
+                <div class="widget">
+                    <h4 class="title">下载</h4>
+                    <div class="content recent-post">
+                        <div class="recent-single-post">
+                            <a href="https://github.com/shampeak/GraceEasy" class="post-title btn btn-primary">Github GraceEasy</a>
+                            <div class="date">https://github.com/shampeak/GraceEasy</div>
+                        </div>
+                        <div class="recent-single-post">
+                            <a href="https://github.com/shampeak/GraceServer" class="post-title btn btn-primary">Github GraceServer</a>
+                            <div class="date">https://github.com/shampeak/GraceServer</div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-sm-4">
+                <div class="widget">
+                    <h4 class="title">概念云</h4>
+                    <div class="content tag-cloud">
+                        <a target="_blank">Restful</a>
+                        <a target="_blank">JSON</a>
+                        <a target="_blank" href="http://doc.phpleague.cn/lm?chr=Design_Patterns">设计模式</a>
+                        <a target="_blank">MVC</a>
+                        <a target="_blank">RBAC</a>
+                        <a target="_blank">Token</a>
+                        <a target="_blank">非关系型数据库</a>
+                        <a target="_blank">依赖注入</a>
+                        <a target="_blank">Markdown</a>
+                        <a target="_blank">耦合</a>
+                        <a target="_blank">XSS</a>
+                        <a target="_blank">Saas</a>
+                        <a target="_blank">FullStack</a>
+                        <a target="_blank">单元测试</a>
+                        <a target="_blank">ESB</a>
+                        <a target="_blank">封装</a>
+                        <a target="_blank">php-fig</a>
+                        <a target="_blank">UML</a>
+                        <a target="_blank">命名空间</a>
+                        <a target="_blank">E-R图</a>
+                        <a target="_blank">大前端</a>
+                        <a target="_blank" href="http://doc.phpleague.cn/lm/view?chr=ConceptCloud&child=Extensions">...</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-sm-4">
+                <div class="widget">
+                    <h4 class="title">相关网站</h4>
+                    <div class="content tag-cloud friend-links">
+                        <a href="http://www.bootcss.com" title="Bootstrap中文网" target="_blank">Bootstrap中文网</a>
+                        <a href="http://www.bootcdn.cn" title="开放CDN服务" target="_blank">开放CDN服务</a>
+                        <a href="http://php.net/" title="PHP"  target="_blank">PHP</a>
+                        <a href="http://www.Github.com/" title="Github"  target="_blank">Github</a>
+                        <a href="http://packagist.org/" title="Github"  target="_blank">Packagist</a>
+                        <a href="http://thephpleague.com/" title="thephpleague"  target="_blank">PackLeague</a>
+                        <a href="http://www.mysql.com/" title="mysql"  target="_blank">Mysql</a>
+                        <a href="http://www.apache.org/" title="apache"  target="_blank">Apache</a>
+                        <a href="http://www.mongodb.com/" title="mongodb"  target="_blank">Mongodb</a>
+                        <a href="http://memcached.org/" title="memcached"  target="_blank">Memcached</a>
+
+                        <a href="http://www.golaravel.com/" title="Laravel中文文档" target="_blank">Laravel中文文档</a>
+                        <a href="http://www.jquery123.com/" title="jQuery中文文档"  target="_blank">jQuery中文文档</a>
+                        <hr>
+                        <a href="https://cn.aliyun.com/" title="阿里云" target="_blank">阿里云</a>
+                        <a href="https://segmentfault.com/" title="Segmentfault" target="_blank">Segmentfault</a>
+                        <a href="http://stackoverflow.com/" title="Stackoverflow" target="_blank">Stackoverflow</a>
+
+                        <a href="http://www.qiniu.com/" title="七牛云"  target="_blank">七牛云</a>
+                        <a href="https://www.jiguang.cn/" title="极光推送"  target="_blank">极光推送</a>
+                        <a href="http://note.youdao.com/" title="有道云笔记"  target="_blank">有道云笔记</a>
+
+
+                    </div>
+                </div></div>
+        </div>
+    </div>
+</footer>
+
+<div class="copyright">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <span>Copyright &copy; <a href="https://github.com/shampeak/GraceEasy">GraceEasy</a></span> |
+                <span><a href="http://www.miibeian.gov.cn/" target="_blank">京ICP备16026359号-1</a></span>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="/assets/js/jquery-1.11.1.min.js"></script>
+<script src="/assets/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="/js/holder.min.js"></script>
+<script src="/js/docs.min.js"></script>
+
+
+
+</body>
+</html>
