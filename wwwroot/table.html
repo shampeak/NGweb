@@ -1,0 +1,628 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap 101 Template</title>
+
+    <link href="assets/css/reset.css" rel="stylesheet" />
+    <link href="http://cdn.bootcss.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="http://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
+    <link href="assets/css/Style.min.css" rel="stylesheet" />
+
+    <script src="http://cdn.bootcss.com/jquery/2.0.0/jquery.min.js"></script>
+    <script src="http://cdn.bootcss.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    <script src="assets/js/app.js"></script>
+
+</head>
+
+<body>
+<!-- navbar start -->
+<nav class="navbar navbar-default navbar-inverse" role="navigation">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand logo" href="#">洁碧官网</a>
+    </div>
+
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav navbar-right">
+            <li><a href="http://www.chinawaterpik.com" title="返回首页"><i class="fa fa-home"></i> 返回首页</a></li>
+            <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                    你好，water001                     <b class="caret"></b></a>
+                <ul class="dropdown-menu">
+                    <li><a href="/bbi-Admin/Users/UpdatePWD.aspx">修改密码</a></li>
+                </ul>
+            </li>
+            <li><a href="logout.php"><i class="fa fa-sign-out"></i> 退出系统</a></li>
+        </ul>
+    </div><!-- /.navbar-collapse -->
+</nav>
+<!-- navbar end -->
+
+
+<div id="wrapper">
+    <!-- 左边栏 -->
+    <div id="sidebar-nav" class="leftcol">
+        <aside>
+            <nav id="menu">
+                <h3>导航</h3>
+                <ul class="list-unstyled mainmenu">
+                    <li class="liitem">
+                        <a href="index.php">
+                            <i class="glyphicon glyphicon-dashboard"></i> 控制面板
+                            <div class="arrow-left"></div>
+                        </a>
+                    </li>
+
+
+                    <li class="liitem down-nav">
+                        <a href="#"><i class="glyphicon glyphicon-th-large"></i> 产品 <span class="badge">2</span></a>
+                        <ul class="list-unstyled submenu">
+                            <li>
+                                <a href="products.php">
+                                    产品列表
+                                </a>
+                            </li>
+                            <li>
+                                <a href="product_add.php">
+                                    添加产品
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+
+
+
+
+                    <li class="liitem">
+                        <a href="orders.php">
+                            <i class="glyphicon glyphicon-shopping-cart"></i> 订单管理
+                            <div class="arrow-left"></div>
+                        </a>
+                    </li>
+
+                    <li class="liitem down-nav">
+                        <a href="#"><i class="glyphicon glyphicon-th-large"></i> 标准界面 <span class="badge">2</span></a>
+                        <ul class="list-unstyled submenu">
+                            <li>
+                                <a href="products.php">
+                                    产品列表
+                                </a>
+                            </li>
+                            <li>
+                                <a href="product_add.php">
+                                    添加产品
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+
+
+                </ul>
+
+
+            </nav>
+            <div class="closemenu">
+
+                <a href="#"><i class="fa fa-chevron-circle-left"></i></a>
+
+            </div>
+        </aside>
+    </div>
+    <!-- /左边栏 -->
+
+    <!-- 右边栏 -->
+    <div id="rightcol" class="rightcol">
+        <!-- 面包屑 -->
+        <div class="toolbar">
+            <a href="#" class="showmenu"><i class="fa fa-bars"></i></a>
+            <ol class="breadcrumb">
+                <li><a href="index.php"><i class="fa fa-home fa-fw"></i> 控制面板</a></li>
+                <li class="active">订单管理</li>
+            </ol>
+        </div>
+        <!-- /面包屑 -->
+
+
+        <!-- 内容部分 -->
+        <div class="main-content">
+            <!-- 功能 -->
+
+            <!-- /功能 -->
+
+            <!-- Tip - ->
+            <div class="alert alert-warning alert-dismissible" role="alert"><button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button><strong>Warning!</strong> Better check yourself, you're not looking too good.</div>
+            <!-- Tip -->
+
+            <!-- 内容 -->
+            <table class="table table-hover table-bordered" id="myTable">
+                <thead>
+                <tr>
+                    <th>订单号</th>
+                    <th><span class="glyphicon glyphicon-user"></span> 客户名称</th>
+                    <th><span class="glyphicon glyphicon-phone"></span> 联系电话</th>
+                    <th>数量</th>
+                    <th><span class="glyphicon glyphicon-yen"></span> 金额</th>
+                    <th>支付</th>
+                    <th>支付宝交易号</th>
+                    <th>物流</th>
+                    <th>物流单号</th>
+                    <th>备注</th>
+                    <th>创建日期</th>
+                    <th>操作</th>
+                </tr>
+                </thead>
+                <tbody>
+
+                <tr class='success'>
+                    <td>241</td>
+                    <td>周大成</td>
+                    <td>13901934507</td>
+                    <td>1</td>
+                    <td>599.00</td>
+                    <td>已付款</td>
+                    <td>2016112021001004690284675404</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td>2016-11-20</td>
+                    <td>
+                        <button type="button" class="btn btn-default btn-xs" data-toggle="modal" data-target="#myModal" data-id="241">
+                            <span class="glyphicon glyphicon-send"></span> 发货
+                        </button>
+                        <a href='order_detail.php?id=241' class='btn btn-primary btn-xs' title="查看详细" data-toggle="tooltip" data-placement="top">
+                            <span class="glyphicon glyphicon-eye-open"></span>
+                        </a>
+                        <button type="button" data-id="241" class='btn btn-danger btn-xs btn-delete' data-toggle="tooltip" data-placement="top" title="删除">
+                            <span class="glyphicon glyphicon-trash"></span>
+                        </button>
+                    </td>
+                </tr>        <tr >
+                    <td>240</td>
+                    <td>横说竖说</td>
+                    <td>11111111111</td>
+                    <td>1</td>
+                    <td>599.00</td>
+                    <td>未付款</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td>2016-11-19</td>
+                    <td>
+                        <button type="button" class="btn btn-default btn-xs" data-toggle="modal" data-target="#myModal" data-id="240">
+                            <span class="glyphicon glyphicon-send"></span> 发货
+                        </button>
+                        <a href='order_detail.php?id=240' class='btn btn-primary btn-xs' title="查看详细" data-toggle="tooltip" data-placement="top">
+                            <span class="glyphicon glyphicon-eye-open"></span>
+                        </a>
+                        <button type="button" data-id="240" class='btn btn-danger btn-xs btn-delete' data-toggle="tooltip" data-placement="top" title="删除">
+                            <span class="glyphicon glyphicon-trash"></span>
+                        </button>
+                    </td>
+                </tr>        <tr class='success'>
+                    <td>239</td>
+                    <td>张柏坚</td>
+                    <td>15814323128</td>
+                    <td>1</td>
+                    <td>599.00</td>
+                    <td>已付款</td>
+                    <td>2016111921001004240231674542</td>
+                    <td>顺丰</td>
+                    <td>928153853880</td>
+                    <td>深圳发</td>
+                    <td>2016-11-19</td>
+                    <td>
+                        <button type="button" class="btn btn-default btn-xs" data-toggle="modal" data-target="#myModal" data-id="239">
+                            <span class="glyphicon glyphicon-send"></span> 发货
+                        </button>
+                        <a href='order_detail.php?id=239' class='btn btn-primary btn-xs' title="查看详细" data-toggle="tooltip" data-placement="top">
+                            <span class="glyphicon glyphicon-eye-open"></span>
+                        </a>
+                        <button type="button" data-id="239" class='btn btn-danger btn-xs btn-delete' data-toggle="tooltip" data-placement="top" title="删除">
+                            <span class="glyphicon glyphicon-trash"></span>
+                        </button>
+                    </td>
+                </tr>        <tr >
+                    <td>238</td>
+                    <td>张柏坚</td>
+                    <td>15814323128</td>
+                    <td>1</td>
+                    <td>599.00</td>
+                    <td>未付款</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td>2016-11-19</td>
+                    <td>
+                        <button type="button" class="btn btn-default btn-xs" data-toggle="modal" data-target="#myModal" data-id="238">
+                            <span class="glyphicon glyphicon-send"></span> 发货
+                        </button>
+                        <a href='order_detail.php?id=238' class='btn btn-primary btn-xs' title="查看详细" data-toggle="tooltip" data-placement="top">
+                            <span class="glyphicon glyphicon-eye-open"></span>
+                        </a>
+                        <button type="button" data-id="238" class='btn btn-danger btn-xs btn-delete' data-toggle="tooltip" data-placement="top" title="删除">
+                            <span class="glyphicon glyphicon-trash"></span>
+                        </button>
+                    </td>
+                </tr>        <tr >
+                    <td>237</td>
+                    <td>张柏坚</td>
+                    <td>15814323128</td>
+                    <td>1</td>
+                    <td>599.00</td>
+                    <td>未付款</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td>2016-11-18</td>
+                    <td>
+                        <button type="button" class="btn btn-default btn-xs" data-toggle="modal" data-target="#myModal" data-id="237">
+                            <span class="glyphicon glyphicon-send"></span> 发货
+                        </button>
+                        <a href='order_detail.php?id=237' class='btn btn-primary btn-xs' title="查看详细" data-toggle="tooltip" data-placement="top">
+                            <span class="glyphicon glyphicon-eye-open"></span>
+                        </a>
+                        <button type="button" data-id="237" class='btn btn-danger btn-xs btn-delete' data-toggle="tooltip" data-placement="top" title="删除">
+                            <span class="glyphicon glyphicon-trash"></span>
+                        </button>
+                    </td>
+                </tr>        <tr >
+                    <td>236</td>
+                    <td>潘雪莹</td>
+                    <td>15899185396</td>
+                    <td>1</td>
+                    <td>899.00</td>
+                    <td>未付款</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td>2016-11-18</td>
+                    <td>
+                        <button type="button" class="btn btn-default btn-xs" data-toggle="modal" data-target="#myModal" data-id="236">
+                            <span class="glyphicon glyphicon-send"></span> 发货
+                        </button>
+                        <a href='order_detail.php?id=236' class='btn btn-primary btn-xs' title="查看详细" data-toggle="tooltip" data-placement="top">
+                            <span class="glyphicon glyphicon-eye-open"></span>
+                        </a>
+                        <button type="button" data-id="236" class='btn btn-danger btn-xs btn-delete' data-toggle="tooltip" data-placement="top" title="删除">
+                            <span class="glyphicon glyphicon-trash"></span>
+                        </button>
+                    </td>
+                </tr>        <tr >
+                    <td>235</td>
+                    <td></td>
+                    <td></td>
+                    <td>1</td>
+                    <td>899.00</td>
+                    <td>未付款</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td>2016-11-10</td>
+                    <td>
+                        <button type="button" class="btn btn-default btn-xs" data-toggle="modal" data-target="#myModal" data-id="235">
+                            <span class="glyphicon glyphicon-send"></span> 发货
+                        </button>
+                        <a href='order_detail.php?id=235' class='btn btn-primary btn-xs' title="查看详细" data-toggle="tooltip" data-placement="top">
+                            <span class="glyphicon glyphicon-eye-open"></span>
+                        </a>
+                        <button type="button" data-id="235" class='btn btn-danger btn-xs btn-delete' data-toggle="tooltip" data-placement="top" title="删除">
+                            <span class="glyphicon glyphicon-trash"></span>
+                        </button>
+                    </td>
+                </tr>        <tr >
+                    <td>234</td>
+                    <td></td>
+                    <td></td>
+                    <td>1</td>
+                    <td>128.00</td>
+                    <td>未付款</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td>2016-11-09</td>
+                    <td>
+                        <button type="button" class="btn btn-default btn-xs" data-toggle="modal" data-target="#myModal" data-id="234">
+                            <span class="glyphicon glyphicon-send"></span> 发货
+                        </button>
+                        <a href='order_detail.php?id=234' class='btn btn-primary btn-xs' title="查看详细" data-toggle="tooltip" data-placement="top">
+                            <span class="glyphicon glyphicon-eye-open"></span>
+                        </a>
+                        <button type="button" data-id="234" class='btn btn-danger btn-xs btn-delete' data-toggle="tooltip" data-placement="top" title="删除">
+                            <span class="glyphicon glyphicon-trash"></span>
+                        </button>
+                    </td>
+                </tr>        <tr class='success'>
+                    <td>233</td>
+                    <td>杨新华</td>
+                    <td>13902883975</td>
+                    <td>1</td>
+                    <td>499.00</td>
+                    <td>已付款</td>
+                    <td>2016110521001004680217329344</td>
+                    <td>顺丰</td>
+                    <td>928153854239</td>
+                    <td></td>
+                    <td>2016-11-05</td>
+                    <td>
+                        <button type="button" class="btn btn-default btn-xs" data-toggle="modal" data-target="#myModal" data-id="233">
+                            <span class="glyphicon glyphicon-send"></span> 发货
+                        </button>
+                        <a href='order_detail.php?id=233' class='btn btn-primary btn-xs' title="查看详细" data-toggle="tooltip" data-placement="top">
+                            <span class="glyphicon glyphicon-eye-open"></span>
+                        </a>
+                        <button type="button" data-id="233" class='btn btn-danger btn-xs btn-delete' data-toggle="tooltip" data-placement="top" title="删除">
+                            <span class="glyphicon glyphicon-trash"></span>
+                        </button>
+                    </td>
+                </tr>        <tr >
+                    <td>232</td>
+                    <td>李广</td>
+                    <td>13802736833</td>
+                    <td>1</td>
+                    <td>899.00</td>
+                    <td>未付款</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td>2016-11-01</td>
+                    <td>
+                        <button type="button" class="btn btn-default btn-xs" data-toggle="modal" data-target="#myModal" data-id="232">
+                            <span class="glyphicon glyphicon-send"></span> 发货
+                        </button>
+                        <a href='order_detail.php?id=232' class='btn btn-primary btn-xs' title="查看详细" data-toggle="tooltip" data-placement="top">
+                            <span class="glyphicon glyphicon-eye-open"></span>
+                        </a>
+                        <button type="button" data-id="232" class='btn btn-danger btn-xs btn-delete' data-toggle="tooltip" data-placement="top" title="删除">
+                            <span class="glyphicon glyphicon-trash"></span>
+                        </button>
+                    </td>
+                </tr>        <tr class='success'>
+                    <td>231</td>
+                    <td>薛旋達</td>
+                    <td>18138722806</td>
+                    <td>1</td>
+                    <td>699.00</td>
+                    <td>已付款</td>
+                    <td>2016110121001004090263636559</td>
+                    <td>顺丰</td>
+                    <td>952364549629</td>
+                    <td></td>
+                    <td>2016-11-01</td>
+                    <td>
+                        <button type="button" class="btn btn-default btn-xs" data-toggle="modal" data-target="#myModal" data-id="231">
+                            <span class="glyphicon glyphicon-send"></span> 发货
+                        </button>
+                        <a href='order_detail.php?id=231' class='btn btn-primary btn-xs' title="查看详细" data-toggle="tooltip" data-placement="top">
+                            <span class="glyphicon glyphicon-eye-open"></span>
+                        </a>
+                        <button type="button" data-id="231" class='btn btn-danger btn-xs btn-delete' data-toggle="tooltip" data-placement="top" title="删除">
+                            <span class="glyphicon glyphicon-trash"></span>
+                        </button>
+                    </td>
+                </tr>        <tr >
+                    <td>230</td>
+                    <td>刘可</td>
+                    <td>18606065820</td>
+                    <td>1</td>
+                    <td>899.00</td>
+                    <td>未付款</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td>2016-10-31</td>
+                    <td>
+                        <button type="button" class="btn btn-default btn-xs" data-toggle="modal" data-target="#myModal" data-id="230">
+                            <span class="glyphicon glyphicon-send"></span> 发货
+                        </button>
+                        <a href='order_detail.php?id=230' class='btn btn-primary btn-xs' title="查看详细" data-toggle="tooltip" data-placement="top">
+                            <span class="glyphicon glyphicon-eye-open"></span>
+                        </a>
+                        <button type="button" data-id="230" class='btn btn-danger btn-xs btn-delete' data-toggle="tooltip" data-placement="top" title="删除">
+                            <span class="glyphicon glyphicon-trash"></span>
+                        </button>
+                    </td>
+                </tr>        <tr >
+                    <td>229</td>
+                    <td></td>
+                    <td></td>
+                    <td>1</td>
+                    <td>899.00</td>
+                    <td>未付款</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td>2016-10-28</td>
+                    <td>
+                        <button type="button" class="btn btn-default btn-xs" data-toggle="modal" data-target="#myModal" data-id="229">
+                            <span class="glyphicon glyphicon-send"></span> 发货
+                        </button>
+                        <a href='order_detail.php?id=229' class='btn btn-primary btn-xs' title="查看详细" data-toggle="tooltip" data-placement="top">
+                            <span class="glyphicon glyphicon-eye-open"></span>
+                        </a>
+                        <button type="button" data-id="229" class='btn btn-danger btn-xs btn-delete' data-toggle="tooltip" data-placement="top" title="删除">
+                            <span class="glyphicon glyphicon-trash"></span>
+                        </button>
+                    </td>
+                </tr>        <tr class='success'>
+                    <td>228</td>
+                    <td>邹健</td>
+                    <td>15854308776，</td>
+                    <td>1</td>
+                    <td>599.00</td>
+                    <td>已付款</td>
+                    <td>2016091721001004900210155696</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td>2016-09-17</td>
+                    <td>
+                        <button type="button" class="btn btn-default btn-xs" data-toggle="modal" data-target="#myModal" data-id="228">
+                            <span class="glyphicon glyphicon-send"></span> 发货
+                        </button>
+                        <a href='order_detail.php?id=228' class='btn btn-primary btn-xs' title="查看详细" data-toggle="tooltip" data-placement="top">
+                            <span class="glyphicon glyphicon-eye-open"></span>
+                        </a>
+                        <button type="button" data-id="228" class='btn btn-danger btn-xs btn-delete' data-toggle="tooltip" data-placement="top" title="删除">
+                            <span class="glyphicon glyphicon-trash"></span>
+                        </button>
+                    </td>
+                </tr>        <tr >
+                    <td>227</td>
+                    <td>高航</td>
+                    <td>18504102931</td>
+                    <td>1</td>
+                    <td>899.00</td>
+                    <td>未付款</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td>2016-09-15</td>
+                    <td>
+                        <button type="button" class="btn btn-default btn-xs" data-toggle="modal" data-target="#myModal" data-id="227">
+                            <span class="glyphicon glyphicon-send"></span> 发货
+                        </button>
+                        <a href='order_detail.php?id=227' class='btn btn-primary btn-xs' title="查看详细" data-toggle="tooltip" data-placement="top">
+                            <span class="glyphicon glyphicon-eye-open"></span>
+                        </a>
+                        <button type="button" data-id="227" class='btn btn-danger btn-xs btn-delete' data-toggle="tooltip" data-placement="top" title="删除">
+                            <span class="glyphicon glyphicon-trash"></span>
+                        </button>
+                    </td>
+                </tr>        </tbody>
+            </table>
+            <!-- /内容 -->
+
+
+            <hr>
+            <!-- 页脚 -->
+            <footer>
+                Copyright &copy; 2016 <a target="_blank" href="http://www.phpleague.cn">Phpleague</a> All Rights
+                Reserved
+            </footer>
+            <!-- /页脚 -->
+        </div>
+        <!-- /内容部分 -->
+    </div>
+    <!-- 右边栏 -->
+</div>
+
+
+
+
+
+<!--
+简单的系统直接界面调用就可以了
+对于复杂的系统使用更细分的对话框架
+-->
+<!-- 填写单号发货 -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="myModalLabel">我要发货</h4>
+            </div>
+            <form class="form-horizontal" id="sendExpress">
+                <div class="modal-body">
+                    <input type="hidden" id="orderId" name="orderId" />
+                    <div class="form-group">
+                        <label for="express" class="col-sm-2 control-label">物流快递</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="express" name="express" maxlength="50" placeholder="物流快递名称">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="expressNo" class="col-sm-2 control-label">物流单号</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="expressNo" name="expressNo" maxlength="50"  placeholder="物流单号">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="remark" class="col-sm-2 control-label">备注</label>
+                        <div class="col-sm-10">
+                            <textarea type="text" class="form-control" id="remark" name="remark"   placeholder="发货备注"></textarea>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+                    <button type="submit" class="btn btn-primary">保存</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<!-- /填写单号发货 -->
+
+
+
+<!-- back to top 代码 todo 整理-->
+<link rel="stylesheet" type="text/css" href="/assets/css/backtotop.css" media="all" />
+<script src="/assets/js/backtotop.js"></script>
+<div id="btttop" class="btttop">
+    <ul>
+        <li class="side-top w4"><a style="display: none" id="backtop" title="返回顶部" href="#top">返回顶部</a></li>
+    </ul>
+</div>
+<!-- /back to top 代码 -->
+
+
+<!-- 分页 -->
+<link href="http://cdn.datatables.net/1.10.12/css/jquery.dataTables.min.css" rel="stylesheet">
+<script src="http://cdn.datatables.net/1.10.12/js/jquery.dataTables.min.js"></script>
+<script type="text/javascript" charset="utf-8">
+    $(document).ready(function () {
+        $('#myTable').dataTable({
+            "aaSorting": [[ 0, "desc" ]],
+            "aLengthMenu": [[10, 20, -1], [10, 20, "All"]],
+            "iDisplayLength":10,			//一页多少条
+            "bAutoWidth": true,	            //自动宽度
+            "bStateSave": false,
+            "bLengthChange": true,          //改变每页显示数据数量
+
+            "oLanguage": {
+                "sLengthMenu": "每页显示 _MENU_ 条记录",
+                "sZeroRecords": "抱歉， 没有找到",
+                "sInfo": "从 _START_ 到 _END_ /共 _TOTAL_ 条数据",
+                "sInfoEmpty": "没有数据",
+                "sInfoFiltered": "(从 _MAX_ 条数据中检索)",
+                "oPaginate": {
+                    "sFirst": "首页",
+                    "sPrevious": "前一页",
+                    "sNext": "后一页",
+                    "sLast": "尾页"
+                },
+                "sZeroRecords": "没有检索到数据",
+               // "sProcessing": "<img src='./loading.gif' />"
+            }
+        });
+    });
+</script>
+<!-- /分页 -->
+
+
+
+
+</body>
+</html>

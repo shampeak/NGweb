@@ -16,10 +16,7 @@ function doScroll() {
     }
 }
 
-$(function () {
-
-
-
+$(document).ready(function () {
     /*
      * back to top
      *
@@ -33,7 +30,6 @@ $(function () {
 </div>
      *
      */
-
     function addLoadEvent(func) {
         if (window.addEventListener) {
             window.addEventListener("load", func, false)
@@ -102,20 +98,6 @@ $(function () {
     /*
      * bacc to top 结束
      */
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 });
