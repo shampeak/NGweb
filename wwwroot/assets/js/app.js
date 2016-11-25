@@ -74,7 +74,7 @@ function showAjaxModal(url, title) {
     jQuery.ajax({
         url: url,
         success: function (response) {
-            console.log(url);
+            //console.log(url);
             jQuery('#modal-sham .modal-title').html(title);
             jQuery('#modal-sham .modal-body').html(response);
             var JS = $("script[type='text/dialog']").html();
